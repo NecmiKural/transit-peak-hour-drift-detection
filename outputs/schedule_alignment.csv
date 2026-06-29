@@ -1,0 +1,41 @@
+stop,label,period,day_type,scheduled_peak,demand_peak,gap_min,n_sched,recommendation
+44783654,UFBA university,AM,weekday,05:55,10:30,275.0,527,demand later; shift service later
+44783654,UFBA university,AM,weekend,06:10,--:--,,351,insufficient data
+44783654,UFBA university,PM,weekday,15:55,17:01,66.6,527,demand later; shift service later
+44783654,UFBA university,PM,weekend,15:35,19:15,220.0,351,demand later; shift service later
+43768720,Lapa Station,AM,weekday,05:50,06:09,19.1,4747,demand later; shift service later
+43768720,Lapa Station,AM,weekend,05:45,06:20,35.0,3259,demand later; shift service later
+43768720,Lapa Station,PM,weekday,16:05,17:52,107.9,4747,demand later; shift service later
+43768720,Lapa Station,PM,weekend,15:35,18:14,159.4,3259,demand later; shift service later
+230565994,Itapua Beach,AM,weekday,07:05,--:--,,75,insufficient data
+230565994,Itapua Beach,AM,weekend,05:10,--:--,,62,insufficient data
+230565994,Itapua Beach,PM,weekday,16:50,--:--,,75,insufficient data
+230565994,Itapua Beach,PM,weekend,15:10,--:--,,62,insufficient data
+125960550,Arena Fonte Nova,AM,weekday,05:00,--:--,,111,insufficient data
+125960550,Arena Fonte Nova,AM,weekend,05:50,--:--,,77,insufficient data
+125960550,Arena Fonte Nova,PM,weekday,15:30,--:--,,111,insufficient data
+125960550,Arena Fonte Nova,PM,weekend,17:15,--:--,,77,insufficient data
+45833547,Barradao Stadium,AM,weekday,05:30,--:--,,204,insufficient data
+45833547,Barradao Stadium,AM,weekend,05:25,--:--,,119,insufficient data
+45833547,Barradao Stadium,PM,weekday,17:10,--:--,,204,insufficient data
+45833547,Barradao Stadium,PM,weekend,15:05,--:--,,119,insufficient data
+44784438,Ferry terminal,AM,weekday,06:00,06:46,46.2,676,demand later; shift service later
+44784438,Ferry terminal,AM,weekend,05:50,--:--,,459,insufficient data
+44784438,Ferry terminal,PM,weekday,15:10,19:27,257.5,676,demand later; shift service later
+44784438,Ferry terminal,PM,weekend,15:20,18:52,212.9,459,demand later; shift service later
+47568123,Shopping mall,AM,weekday,05:35,--:--,,524,insufficient data
+47568123,Shopping mall,AM,weekend,05:55,07:50,115.0,333,demand later; shift service later
+47568123,Shopping mall,PM,weekday,16:20,15:57,-22.3,524,demand earlier; shift service earlier
+47568123,Shopping mall,PM,weekend,15:50,19:10,200.4,333,demand later; shift service later
+44072192,Castro Alves Theater,AM,weekday,06:30,07:21,51.4,322,demand later; shift service later
+44072192,Castro Alves Theater,AM,weekend,06:15,07:35,80.0,192,demand later; shift service later
+44072192,Castro Alves Theater,PM,weekday,15:15,17:20,125.5,322,demand later; shift service later
+44072192,Castro Alves Theater,PM,weekend,15:40,18:50,190.0,192,demand later; shift service later
+258781031,Salvador Bus Station,AM,weekday,05:45,06:20,35.0,2022,demand later; shift service later
+258781031,Salvador Bus Station,AM,weekend,05:50,--:--,,1458,insufficient data
+258781031,Salvador Bus Station,PM,weekday,16:35,17:05,30.6,2022,demand later; shift service later
+258781031,Salvador Bus Station,PM,weekend,15:15,17:53,158.1,1458,demand later; shift service later
+44783914,Lacerda Elevator,AM,weekday,06:25,07:27,62.9,874,demand later; shift service later
+44783914,Lacerda Elevator,AM,weekend,05:55,08:10,135.0,582,demand later; shift service later
+44783914,Lacerda Elevator,PM,weekday,15:30,17:06,96.5,874,demand later; shift service later
+44783914,Lacerda Elevator,PM,weekend,15:00,18:18,198.8,582,demand later; shift service later

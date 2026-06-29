@@ -1,0 +1,21 @@
+stop,label,period,n_days,daily_boardings,coverage_pct,reliable,official,weekday,weekend,holiday,weekend_shift_min,rain_shift_min,boundary_drift_days,detector
+44783654,UFBA university,AM,6,1565.4,6.5,False,06:00,10:30,--:--,--:--,,-22.5,4.0,DEV-fallback
+44783654,UFBA university,PM,29,1565.4,31.5,True,17:00,17:01,19:15,--:--,133.4,-22.0,13.0,DEV-fallback
+43768720,Lapa Station,AM,62,43125.2,67.4,True,06:00,06:09,06:20,--:--,10.9,0.2,59.0,DEV-fallback
+43768720,Lapa Station,PM,20,43125.2,21.7,True,17:00,17:52,18:14,--:--,21.5,11.7,10.0,DEV-fallback
+230565994,Itapua Beach,AM,0,49.8,0.0,False,,,,,,,,
+230565994,Itapua Beach,PM,0,49.8,0.0,False,,,,,,,,
+125960550,Arena Fonte Nova,AM,0,0.0,0.0,False,,,,,,,,
+125960550,Arena Fonte Nova,PM,0,0.0,0.0,False,,,,,,,,
+45833547,Barradao Stadium,AM,0,2.5,0.0,False,,,,,,,,
+45833547,Barradao Stadium,PM,0,2.5,0.0,False,,,,,,,,
+44784438,Ferry Boat terminal,AM,33,440.4,35.9,True,06:00,06:46,--:--,--:--,,6.0,13.0,DEV-fallback
+44784438,Ferry Boat terminal,PM,9,440.4,9.8,False,17:00,19:27,18:52,--:--,-34.6,,1.0,DEV-fallback
+47568123,Shopping mall,AM,1,937.3,1.1,False,06:00,--:--,07:50,--:--,,,0.0,DEV-fallback
+47568123,Shopping mall,PM,43,937.3,46.7,True,17:00,15:57,19:10,18:20,192.8,0.1,26.0,DEV-fallback
+44072192,Castro Alves Theater,AM,18,885.0,19.6,True,06:00,07:21,07:35,07:27,13.6,-14.3,4.0,DEV-fallback
+44072192,Castro Alves Theater,PM,32,885.0,34.8,True,17:00,17:20,18:50,--:--,89.5,14.0,24.0,DEV-fallback
+258781031,Salvador Bus Station,AM,2,10712.2,2.2,False,06:00,06:20,--:--,--:--,,0.0,0.0,DEV-fallback
+258781031,Salvador Bus Station,PM,53,10712.2,57.6,True,17:00,17:05,17:53,17:35,47.6,-13.4,31.0,DEV-fallback
+44783914,Lacerda Elevator,AM,15,3023.3,16.3,True,06:00,07:27,08:10,--:--,42.1,-46.1,9.0,DEV-fallback
+44783914,Lacerda Elevator,PM,32,3023.3,34.8,True,17:00,17:06,18:18,18:35,72.3,3.6,21.0,DEV-fallback

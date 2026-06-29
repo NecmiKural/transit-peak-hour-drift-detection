@@ -1,0 +1,18 @@
+stop,label,n_days,official_am,weekday_am,weekend_am,holiday_am,weekend_shift_min,n_drift_days,weekday_dry,weekday_rain,rain_shift_min
+43768720,Lapa Station,62,06:00,06:10,06:20,--:--,9.8,0,06:09,06:10,1.6
+258781031,Salvador Bus Station,2,06:00,06:20,--:--,--:--,,0,--:--,06:20,
+44783914,Lacerda Elevator,12,06:00,07:43,08:10,--:--,26.7,0,06:45,08:00,75.0
+# Source: Kaggle kernel necmikural/concept-drifters-d-drift v2 (REAL SSA_StopBusTimeSeries_5 boarding + CapyMOA ADWIN + Open-Meteo). Data 2024-03-01..05-31, weather 68/92 days rainy.
+#
+# CALIBRATION FINDINGS (from concept-drifters-profile, weekday hourly mean boardings):
+#  - Lapa (43768720): SHARP morning peak (06:00~258, 07:00~477). CLEAN result: AM start 06:10, stable (0 ADWIN drift), +10min weekend. <- the headline real finding.
+#  - BusStation (258781031): boardings high ALL DAY (~45) with EVENING peak (18:00~96); morning is NOT a peak above baseline -> only 2 AM days. Its real peak is PM.
+#  - Lacerda (44783914): morning weak (peak is 17:00~33); only 12 AM days, rain/weekend numbers noisy (few days).
+#  - UFBA (44783654): NO morning boarding peak; boardings rise to evening (students BOARD when leaving). Morning ARRIVAL is in the ALIGHTING (landing) series, not boarding.
+#  - Itapua / Fonte Nova / Barradao: near-zero boardings in this subset (leisure/event) -> not usable for boarding peaks.
+#
+# IMPLICATIONS for the team:
+#  1. Detector params (THRESH_K=2.5, MIN_ABS=3, MIN_SUSTAIN=4, AM window) are fine; the issue was stop/signal choice.
+#  2. Most stops' boarding peak is in the EVENING -> add PM (evening) boundary detection; that's the richer, more universal signal.
+#  3. For morning-arrival stops (UFBA, mall), use the ALIGHTING (landing) series for the AM boundary.
+#  4. Revise START_SUBSET to evidence-based stops: Lapa (clean AM), + PM analysis for BusStation/Lacerda/Mall/CastroAlves.

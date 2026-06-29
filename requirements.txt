@@ -1,0 +1,24 @@
+# Reproducible environment for COMPX523 A3 (Concept Drifters).
+# Pinned to the versions the results were produced with.
+# Requires Python >= 3.10 and Java 17 at runtime (CapyMOA wraps MOA via JPype).
+
+# Core streaming ML
+capymoa==0.13.0
+
+# Data
+pandas==2.3.3
+numpy==2.4.6
+scipy==1.17.1
+pyarrow==24.0.0
+huggingface_hub==1.20.1
+
+# External data
+requests==2.34.2
+holidays==0.99
+
+# Viz + notebooks
+matplotlib==3.11.0
+jupyter>=1.0
+
+# Optional: full-network SUNT loader (not needed for the 10-stop subset)
+# suntdataset==0.2.0

@@ -1,0 +1,26 @@
+stop,label,arf_rmse,perinstance_adwin_detections,perinstance_drift_days,daily_rmse_adwin_drift_days,backend
+43768720,Lapa Station,67.104,186.0,86.0,0.0,capymoa_adwin
+258781031,Salvador Bus Station,12.482,136.0,79.0,0.0,capymoa_adwin
+44783914,Lacerda Elevator,4.263,119.0,77.0,0.0,capymoa_adwin
+47568123,Shopping mall,1.629,126.0,80.0,0.0,capymoa_adwin
+44072192,Castro Alves Theater,1.281,58.0,35.0,0.0,capymoa_adwin
+44783654,UFBA university,2.712,141.0,80.0,0.0,capymoa_adwin
+44784438,Ferry Boat terminal,0.842,57.0,48.0,0.0,capymoa_adwin
+230565994,Itapua Beach,0.273,55.0,43.0,0.0,capymoa_adwin
+# Framing 2 (concept drift on Role C's online ARF regressor error). REAL run:,,,,,,
+# Kaggle kernel necmikural/concept-drifters-conceptdrift, CapyMOA ADWIN (delta=0.002),,,,,
+# ARF (ensemble=10) prequential over Role-B-style features (lags/rolling/time/weekend).,,,,,,
+#,,,,,,
+#  - perinstance_adwin_*: ADWIN on the raw per-instance |error| stream. Fires,,,,,,
+#    constantly (55-186 detections, most days) because demand is strongly,,,,,
+#    seasonal (large error at peaks, small at troughs) -> ADWIN tracks the,,,,,
+#    within-day cycle, NOT meaningful concept drift. Reported as a methodological,,,,,
+#    caveat, not a result.,,,,,
+#  - daily_rmse_adwin_drift_days: ADWIN on the per-DAY RMSE series (~92 pts/stop).,,,,,,
+#    = 0 for every stop -> once ARF warms up, its daily error regime is STABLE,,,,,
+#    across Mar-May. No concept drift to adapt to in this window.,,,,,,
+#,,,,,,
+# CONCLUSION (consistent with Framing 1's boundary ADWIN = 0 drift): no temporal,,,,,,
+# concept drift in this 3-month window at either the boundary or model-error level.,,,,,,
+# The real, actionable variation is structural/cyclical (weekday vs weekend vs,,,,,
+# holiday, and stop type), not slow drift.,,,,

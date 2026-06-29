@@ -1,0 +1,11 @@
+stop_id,stop_name,model,n_instances,mae,rmse
+43768720,Lapa Station,baseline_previous_interval,21840,7.215934065934066,11.04836603038621
+44072192,Castro Alves Theater,baseline_previous_interval,21840,0.3678571428571429,0.6953534953651154
+44783654,UFBA university,baseline_previous_interval,21840,0.5062271062271062,1.1238750989746316
+44783914,Lacerda Elevator,baseline_previous_interval,21840,0.6833333333333333,1.1684183605205225
+44784438,Ferry Boat terminal,baseline_previous_interval,21840,0.1836996336996337,0.4449554449440392
+45833547,Barradao Stadium,baseline_previous_interval,21840,0.003021978021978,0.0566138517072297
+47568123,Shopping mall,baseline_previous_interval,21840,0.4,0.8098523358370993
+125960550,Arena Fonte Nova,baseline_previous_interval,21840,0.0003663003663003,0.0191389750587738
+230565994,Itapua Beach,baseline_previous_interval,21840,0.0404761904761904,0.2043483343662036
+258781031,Salvador Bus Station,baseline_previous_interval,21840,2.1759157509157507,2.989327781639308
