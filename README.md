@@ -37,8 +37,8 @@ The assignment's 10-stop subset of the
 [`labiaufba/SSA_StopBusTimeSeries_5`](https://huggingface.co/datasets/labiaufba/SSA_StopBusTimeSeries_5)
 Hugging Face dataset: 5-minute boarding / landing / occupancy aggregations for
 **March to May 2024**, around 1 MB per CSV. The counts are historical estimates
-that the dataset's authors derived from AVL, AFC and GTFS records, not live
-feeds; this project replays them in time order as a stream. The dataset comes
+that the dataset's authors derived after the fact from AVL, AFC and GTFS
+records; this project replays them in time order as a stream. The dataset comes
 from the [SUNT](https://github.com/LabIA-UFBA/SUNT) project, licensed CC BY 4.0.
 Re-downloadable with `scripts/01_download_data.py` (data itself is gitignored,
 not redistributed).
