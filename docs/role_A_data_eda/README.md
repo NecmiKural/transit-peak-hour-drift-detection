@@ -14,7 +14,6 @@ Experiments §dataset/EDA (daily profiles, weekday vs weekend).
 - `process_sunt.py` : v2 ingestion + streaming EDA + per-stop RegressionInstance handle
 - `eda_plots/` : 10 per-stop weekday vs weekend boarding profiles
 - `A_README.md`, `output_log.md` : A's v2 notes and run log
-- `REVIEW_FEEDBACK.md` : integration review (v2 verified on Kaggle); one minor leakage fix flagged
 - `A_report_draft.md` : starter draft for the report (Method/Data + Experiments/EDA)
 
 ## Where the working code lives (for Roles B-F)
