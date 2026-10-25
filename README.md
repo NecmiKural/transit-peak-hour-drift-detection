@@ -1,13 +1,18 @@
 # Transit Peak-Hour Boundary Detection and Drift
 
-**When does rush hour really start?** An online, streaming analysis of bus
-boarding demand in Salvador, Brazil, that detects the true start and end of the
-morning and evening peaks per stop, then checks whether those boundaries drift
-over time or shift across weekday / weekend / holiday / rainy days. Framed as a
-streaming change-detection problem on [CapyMOA](https://capymoa.org/) / MOA.
+**When does rush hour really start?** An online analysis of bus boarding
+demand in Salvador, Brazil, that detects the true start and end of the morning
+and evening peaks per stop, then checks whether those boundaries drift over time
+or shift across weekday / weekend / holiday / rainy days. Framed as a streaming
+change-detection problem on [CapyMOA](https://capymoa.org/) / MOA.
 
-Six-person project, shared here as a portfolio sample. See [Team](#team) for full credit and
-[`report/`](report/) for the final paper and slides.
+Data: three months (March to May 2024) of historical 5-minute estimated boarding counts for 10 Salvador bus stops (SUNT, CC BY 4.0), replayed as a stream.
+
+Six-person COMPX523 group project, shared here as a portfolio sample with the
+team's agreement. **My part: Role D (change-point and drift):** the adaptive
+boundary detector, the ADWIN and Page-Hinkley drift tests and the schedule
+alignment. See [Team](#team) for full credit and [`report/`](report/) for the
+final paper and slides.
 
 ## The question and why it matters
 
@@ -31,8 +36,12 @@ feed as an infinite stream and ask three questions:
 The assignment's 10-stop subset of the
 [`labiaufba/SSA_StopBusTimeSeries_5`](https://huggingface.co/datasets/labiaufba/SSA_StopBusTimeSeries_5)
 Hugging Face dataset: 5-minute boarding / landing / occupancy aggregations for
-**March to May 2024**, around 1 MB per CSV. Re-downloadable with
-`scripts/01_download_data.py` (data itself is gitignored, not redistributed).
+**March to May 2024**, around 1 MB per CSV. The counts are historical estimates
+that the dataset's authors derived from AVL, AFC and GTFS records, not live
+feeds; this project replays them in time order as a stream. The dataset comes
+from the [SUNT](https://github.com/LabIA-UFBA/SUNT) project, licensed CC BY 4.0.
+Re-downloadable with `scripts/01_download_data.py` (data itself is gitignored,
+not redistributed).
 
 | Stop ID | Location | Character |
 |---|---|---|
@@ -50,7 +59,10 @@ Hugging Face dataset: 5-minute boarding / landing / occupancy aggregations for
 ## Headline results
 
 **Detected demand boundaries vs the official window** (online adaptive-threshold
-detector; full table in `outputs/ampm_summary_real.csv`):
+detector with CapyMOA ADWIN; from the Kaggle run recorded in
+`outputs/D_drift_findings.md`. `outputs/ampm_summary_real.csv` is a local
+development run without Java, using the fallback detector, so its numbers
+differ slightly):
 
 | Stop | Period | Detected start (weekday) | Official | Weekend shift |
 |---|---|---|---|---|
@@ -62,7 +74,9 @@ detector; full table in `outputs/ampm_summary_real.csv`):
 
 **The streaming finding: no temporal concept drift in this window.** CapyMOA
 ADWIN on the per-day boundary series and on the per-day model RMSE both flag
-**zero drift days for every stop**. The real, actionable variation is
+**zero drift days for every stop analysed** (the five stops above for the
+boundaries; eight stops for the model error, without Arena Fonte Nova and
+Manoel Barradas Stadium, see `outputs/role_d_concept_drift.csv`). The real, actionable variation is
 *structural* (weekday vs weekend vs holiday, and stop type), not slow temporal
 drift. A methodological caveat we document honestly: per-instance ADWIN on the
 model error fires constantly (55 to 186 times per stop), but only because it
@@ -114,7 +128,7 @@ transit-peak-hour-drift-detection/
 ├── src/                      ← peaks, drift, drift_analysis, pipeline, schedule_alignment, features
 ├── scripts/                  ← 01 download · 02 build features · 03 drift · 04 schedule · helpers
 ├── external/                 ← Open-Meteo weather + Bahia holidays
-├── figures/                  ← EDA + result figures (incl. role_E_polished/)
+├── figures/                  ← EDA + result figures (role_E_polished/ by Role E, Saurabh Jyala)
 ├── outputs/                  ← result CSVs + D_drift_findings.md
 ├── report/                   ← final paper (PDF) + slides (PDF)
 └── docs/                     ← per-role method notes and handovers
@@ -163,5 +177,6 @@ A six-person project, with equal credit. Roles, in CRediT terms:
 Python · CapyMOA / MOA (JPype, OpenJDK 17) · pandas · NumPy · Open-Meteo · GTFS.
 
 ---
-*University coursework (COMPX523, group project). Shared as a portfolio sample.
-Course data not redistributed.*
+*University coursework (COMPX523, group project). Shared as a portfolio sample
+with the team's agreement. Code is MIT licensed (see `LICENSE`); course data is
+not redistributed and not covered by the licence.*
