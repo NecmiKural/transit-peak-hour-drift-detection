@@ -1,0 +1,85 @@
+/* Ink on paper, as in the other portfolio viewers: colour only where it carries meaning
+   (weekday or weekend, the official time), always next to words or shapes that say the same. */
+
+:root {
+  --paper: #f7f4ec;
+  --panel: #efe9dc;
+  --ink: #1d1b16;
+  --ink-soft: #5a5446;
+  --rule: #d6cdb9;
+  --accent: #0d5e66;
+  --weekday: #0d5e66;
+  --weekend: #c2410c;
+  --official: #1d1b16;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15140f;
+    --panel: #1e1c16;
+    --ink: #ece5d5;
+    --ink-soft: #b0a793;
+    --rule: #3b372d;
+    --accent: #7cc8cf;
+    --weekday: #7cc8cf;
+    --weekend: #fb923c;
+    --official: #ece5d5;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem) / 1.55 var(--sans);
+}
+
+a { color: var(--accent); text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+code, .kicker { font-family: var(--mono); }
+code { font-size: 0.9em; }
+
+h1, h2 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+h1 { font-size: clamp(1.6rem, 1.1rem + 2.6vw, 2.9rem); margin: 0 0 0.5rem; max-width: 22ch; }
+h2 { font-size: 1.3rem; margin: 0 0 0.5rem; }
+
+.masthead { padding: var(--gutter) var(--gutter) 1rem; border-bottom: 4px double var(--rule); }
+.kicker { margin: 0 0 0.4rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+.notices { display: grid; gap: 0.5rem; margin-top: 1rem; max-width: 75ch; }
+.notice { margin: 0; padding: 0.5rem 0.75rem; border-left: 4px solid var(--accent); background: var(--panel); font-size: 0.875rem; }
+
+main { padding: 0 var(--gutter) var(--gutter); max-width: 60rem; }
+section { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+section > p { max-width: 70ch; }
+.quiet { color: var(--ink-soft); font-size: 0.875rem; }
+
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; font-size: 0.875rem; }
+th, td { text-align: left; padding: 0.35rem 0.75rem 0.35rem 0; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+thead th { border-bottom: 2px solid var(--ink-soft); }
+
+figure { margin: 1rem 0; }
+figcaption { font-family: var(--serif); font-weight: 600; }
+/* Charts keep their 640-unit width and scroll sideways on a phone, so their text stays legible. */
+.chart { overflow-x: auto; max-width: 640px; }
+.chart svg { display: block; width: 640px; max-width: none; height: auto; overflow: visible; }
+.key svg { display: inline-block; width: 0.8em; vertical-align: -0.05em; }
+
+.weekday { fill: var(--weekday); }
+.weekend { fill: var(--weekend); }
+.grid { stroke: var(--rule); stroke-width: 1; }
+.official { stroke: var(--official); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.official-label, .tick, .lane, .value { fill: var(--ink-soft); font: 11px var(--sans); }
+.official-label { fill: var(--ink); }
+.bar { fill: var(--weekday); }
+.bar.early { fill: var(--weekend); }
+
+.footer { padding: 1.5rem var(--gutter) 2.5rem; color: var(--ink-soft); font-size: 0.875rem; }
+.footer p { max-width: 75ch; margin: 0; }
