@@ -8,6 +8,8 @@ change-detection problem on [CapyMOA](https://capymoa.org/) / MOA.
 
 Data: three months (March to May 2024) of historical 5-minute estimated boarding counts for 10 Salvador bus stops (SUNT, CC BY 4.0), replayed as a stream.
 
+Charts of the results: [Hugging Face Space](https://huggingface.co/spaces/necmikural/transit-peak-hours), plain HTML built from `outputs/` by `space/build.py`.
+
 Six-person COMPX523 group project, shared here as a portfolio sample with the
 team's agreement. **My part: Role D (change-point and drift):** the adaptive
 boundary detector, the ADWIN and Page-Hinkley drift tests and the schedule
